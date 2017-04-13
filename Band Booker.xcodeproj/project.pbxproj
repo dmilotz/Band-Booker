@@ -18,6 +18,7 @@
 		11359BE01E9F6AB00054D5FB /* ManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11359BDF1E9F6AB00054D5FB /* ManageViewController.swift */; };
 		11359BE21E9F6AE30054D5FB /* CreateBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11359BE11E9F6AE30054D5FB /* CreateBookingViewController.swift */; };
 		11359BE41E9F6B0C0054D5FB /* FindBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11359BE31E9F6B0C0054D5FB /* FindBookingViewController.swift */; };
+		11359BE71EA0046A0054D5FB /* BookingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11359BE61EA0046A0054D5FB /* BookingModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		11359BDF1E9F6AB00054D5FB /* ManageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageViewController.swift; sourceTree = "<group>"; };
 		11359BE11E9F6AE30054D5FB /* CreateBookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBookingViewController.swift; sourceTree = "<group>"; };
 		11359BE31E9F6B0C0054D5FB /* FindBookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindBookingViewController.swift; sourceTree = "<group>"; };
+		11359BE61EA0046A0054D5FB /* BookingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingModel.swift; sourceTree = "<group>"; };
 		3659617181B64A1ABF9EE744 /* Pods-Band Booker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Band Booker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Band Booker/Pods-Band Booker.debug.xcconfig"; sourceTree = "<group>"; };
 		9FA1CAB3D7EB736FB4166E52 /* Pods-Band Booker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Band Booker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Band Booker/Pods-Band Booker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +73,7 @@
 		11359BC81E9F5CC20054D5FB /* Band Booker */ = {
 			isa = PBXGroup;
 			children = (
+				11359BE51EA0043D0054D5FB /* Models */,
 				11359BC91E9F5CC20054D5FB /* AppDelegate.swift */,
 				11359BCB1E9F5CC20054D5FB /* ViewController.swift */,
 				11359BCD1E9F5CC20054D5FB /* Main.storyboard */,
@@ -84,6 +87,14 @@
 				11359BE31E9F6B0C0054D5FB /* FindBookingViewController.swift */,
 			);
 			path = "Band Booker";
+			sourceTree = "<group>";
+		};
+		11359BE51EA0043D0054D5FB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11359BE61EA0046A0054D5FB /* BookingModel.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		5F2C9CD832169B5B8B099B9A /* Frameworks */ = {
@@ -232,6 +243,7 @@
 				11359BE21E9F6AE30054D5FB /* CreateBookingViewController.swift in Sources */,
 				11359BE01E9F6AB00054D5FB /* ManageViewController.swift in Sources */,
 				11359BCC1E9F5CC20054D5FB /* ViewController.swift in Sources */,
+				11359BE71EA0046A0054D5FB /* BookingModel.swift in Sources */,
 				11359BCA1E9F5CC20054D5FB /* AppDelegate.swift in Sources */,
 				11359BE41E9F6B0C0054D5FB /* FindBookingViewController.swift in Sources */,
 			);

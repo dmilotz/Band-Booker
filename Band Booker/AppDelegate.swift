@@ -11,6 +11,8 @@ import Firebase
 import FirebaseDatabase
 import FirebaseStorage
 import GoogleSignIn
+import GooglePlaces
+import GooglePlacePicker
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
@@ -21,10 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     // Override point for customization after application launch.
+    //GOOGLE place api: AIzaSyAPxmYgD7E58WfsjB_CW9zKx6R-HQ-tQxA
     FIRApp.configure()
     FIRDatabase.database().persistenceEnabled = true
     GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
     GIDSignIn.sharedInstance().delegate = self
+    GMSPlacesClient.provideAPIKey("AIzaSyAPxmYgD7E58WfsjB_CW9zKx6R-HQ-tQxA")
+//    GMSServices.provideAPIKey("AIzaSyAPxmYgD7E58WfsjB_CW9zKx6R-HQ-tQxA")
+    
     return true
   }
   

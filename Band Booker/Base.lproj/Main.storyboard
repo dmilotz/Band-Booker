@@ -28,7 +28,7 @@
             </objects>
             <point key="canvasLocation" x="916" y="686"/>
         </scene>
-        <!--Create Booking-->
+        <!--Manage-->
         <scene sceneID="5UP-GS-x5b">
             <objects>
                 <viewController id="59V-sb-OjL" sceneMemberID="viewController">
@@ -41,7 +41,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Create Booking" id="vBK-Xb-XYg"/>
+                    <tabBarItem key="tabBarItem" title="Manage" id="vBK-Xb-XYg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpN-Df-S3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -95,40 +95,177 @@
                     <connections>
                         <segue destination="59V-sb-OjL" kind="relationship" relationship="viewControllers" id="x0O-Eh-Ifs"/>
                         <segue destination="5Sm-WC-xU7" kind="relationship" relationship="viewControllers" id="C2Y-OE-gdj"/>
-                        <segue destination="Tic-au-0bZ" kind="relationship" relationship="viewControllers" id="QhD-nM-BPL"/>
+                        <segue destination="akC-Ib-e3a" kind="relationship" relationship="viewControllers" id="QhD-nM-BPL"/>
                     </connections>
                 </tabBarController>
             </objects>
             <point key="canvasLocation" x="-535" y="-105"/>
         </scene>
-        <!--Manage-->
+        <!--Create Booking View Controller-->
         <scene sceneID="7db-k7-MBs">
             <objects>
-                <tableViewController id="Tic-au-0bZ" customClass="ManageViewController" customModule="Band_Booker" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kx5-fZ-B8v">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Op-Yn-XgZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="Tic-au-0bZ" customClass="CreateBookingViewController" customModule="Band_Booker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kx5-fZ-B8v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="q5z-m6-A0Z">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q5z-m6-A0Z" id="5lP-L7-cpx">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <sections>
+                            <tableViewSection id="kVP-Lz-xMu">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="q5z-m6-A0Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q5z-m6-A0Z" id="5lP-L7-cpx">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQ4-ya-8ir">
+                                                    <rect key="frame" x="137" y="6" width="100" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Choose Venue"/>
+                                                    <connections>
+                                                        <action selector="chooseVenueClicked:" destination="Tic-au-0bZ" eventType="touchUpInside" id="ReN-LS-XHg"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Venue Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwb-3C-F6i" userLabel="Venue Name">
+                                                    <rect key="frame" x="107" y="10" width="161" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="183" id="m2n-6p-Pt0">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="183"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m2n-6p-Pt0" id="8RT-WK-ScK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="182.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date/Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IS8-4L-S9h">
+                                                    <rect key="frame" x="8" y="81" width="80" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="QUB-Wt-Jhg">
+                                                    <rect key="frame" x="94" y="19" width="242" height="135"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="513801408.81442302">
+                                                        <!--2017-04-13 18:36:48 +0000-->
+                                                    </date>
+                                                    <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                                        <!--1970-01-01 11:00:00 +0000-->
+                                                    </date>
+                                                </datePicker>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="99" id="upK-my-aE5">
+                                        <rect key="frame" x="0.0" y="227" width="375" height="99"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="upK-my-aE5" id="t0a-B5-LEf">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="98.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuN-Ly-IsH">
+                                                    <rect key="frame" x="8" y="39" width="47" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v1g-36-m63">
+                                                    <rect key="frame" x="72" y="0.0" width="278" height="98"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                </pickerView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="122" id="N2f-Qa-pnr">
+                                        <rect key="frame" x="0.0" y="326" width="375" height="122"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N2f-Qa-pnr" id="3Ys-38-Aol">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="121.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lineup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCU-gG-juD">
+                                                    <rect key="frame" x="8" y="50" width="52" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a6y-3J-XjA">
+                                                    <rect key="frame" x="131" y="8" width="214" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JjJ-VI-BAZ">
+                                                    <rect key="frame" x="131" y="45" width="214" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bZi-eZ-egq">
+                                                    <rect key="frame" x="131" y="83" width="214" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="Tic-au-0bZ" id="Pav-vq-6SZ"/>
                             <outlet property="delegate" destination="Tic-au-0bZ" id="sxW-f1-liA"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Manage" id="SQl-f1-gaT"/>
+                    <navigationItem key="navigationItem" id="dHH-g4-KD4">
+                        <barButtonItem key="rightBarButtonItem" title="Create Booking" id="BUq-l0-Kli"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bandOneLabel" destination="a6y-3J-XjA" id="vwW-VZ-ZaY"/>
+                        <outlet property="bandThreeLabel" destination="bZi-eZ-egq" id="2Vi-3I-wg1"/>
+                        <outlet property="bandTwoLabel" destination="JjJ-VI-BAZ" id="ztC-b2-shh"/>
+                        <outlet property="chooseVenueButton" destination="nQ4-ya-8ir" id="TVI-pC-ySi"/>
+                        <outlet property="dateTimePicker" destination="QUB-Wt-Jhg" id="RMe-Vl-vdg"/>
+                        <outlet property="genrePicker" destination="v1g-36-m63" id="Kt7-ej-Gqq"/>
+                        <outlet property="venueNameLabel" destination="Nwb-3C-F6i" id="MXL-W0-Mf8"/>
+                    </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Op-Yn-XgZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="604" y="-106"/>
+            <point key="canvasLocation" x="1389.5999999999999" y="-107.49625187406298"/>
+        </scene>
+        <!--Create Booking-->
+        <scene sceneID="d6p-Hm-hkY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="akC-Ib-e3a" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Create Booking" id="SQl-f1-gaT"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="U2O-Wp-9Oj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Tic-au-0bZ" kind="relationship" relationship="rootViewController" id="LUc-mm-1yR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IgL-zd-Jzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="604" y="-106.59670164917542"/>
         </scene>
     </scenes>
 </document>

@@ -9,7 +9,9 @@ target 'Band Booker' do
   pod ‘Firebase/Auth’
   pod ‘Firebase/Storage’
   pod 'GoogleSignIn'
-
+	  pod 'GooglePlaces'
+  pod 'GooglePlacePicker'
+  pod 'GoogleMaps'
   # Pods for Band Booker
 
 end
