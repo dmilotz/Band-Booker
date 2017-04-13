@@ -78,6 +78,7 @@ class NetworkClient{
     ref.child("users").child(uid!).child("currentBookings").child(booking.bookingId).setValue(booking.venue.name)
     ref.child("venues").child(booking.venue.placeId).child("currentBookings").child(booking.bookingId).setValue("")
     ref.child("venues").child(booking.venue.placeId).setValue(booking.venue.getDict())
+    ref.child("cities").child(booking.venue.city).child("currentBookings").child(booking.bookingId).setValue("")
   }
   
   static func getBookingsPerCourse(courseId: String, completion: @escaping (_ dict: [String:Any]?, _ error: String?) -> Void) {
@@ -97,7 +98,6 @@ class NetworkClient{
     let ref = FIRDatabase.database().reference()
     ref.child("users").child(uid!).child("currentBookings").child(bookingId).removeValue()
     ref.child("bookings").child(bookingId).child("players").child(uid!).removeValue()
-    
   }
   
 //  

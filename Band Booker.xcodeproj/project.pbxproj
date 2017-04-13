@@ -21,6 +21,7 @@
 		11359BE71EA0046A0054D5FB /* BookingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11359BE61EA0046A0054D5FB /* BookingModel.swift */; };
 		11359BE91EA017F80054D5FB /* VenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11359BE81EA017F80054D5FB /* VenueModel.swift */; };
 		11359BEB1EA01ACD0054D5FB /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11359BEA1EA01ACD0054D5FB /* NetworkClient.swift */; };
+		11359BEF1EA032DD0054D5FB /* BookingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11359BEE1EA032DD0054D5FB /* BookingCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		11359BE61EA0046A0054D5FB /* BookingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingModel.swift; sourceTree = "<group>"; };
 		11359BE81EA017F80054D5FB /* VenueModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueModel.swift; sourceTree = "<group>"; };
 		11359BEA1EA01ACD0054D5FB /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		11359BEE1EA032DD0054D5FB /* BookingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingCell.swift; sourceTree = "<group>"; };
 		3659617181B64A1ABF9EE744 /* Pods-Band Booker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Band Booker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Band Booker/Pods-Band Booker.debug.xcconfig"; sourceTree = "<group>"; };
 		9FA1CAB3D7EB736FB4166E52 /* Pods-Band Booker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Band Booker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Band Booker/Pods-Band Booker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +79,7 @@
 		11359BC81E9F5CC20054D5FB /* Band Booker */ = {
 			isa = PBXGroup;
 			children = (
+				11359BED1EA032CD0054D5FB /* Cells */,
 				11359BE51EA0043D0054D5FB /* Models */,
 				11359BC91E9F5CC20054D5FB /* AppDelegate.swift */,
 				11359BCB1E9F5CC20054D5FB /* ViewController.swift */,
@@ -101,6 +104,14 @@
 				11359BE81EA017F80054D5FB /* VenueModel.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		11359BED1EA032CD0054D5FB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				11359BEE1EA032DD0054D5FB /* BookingCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		5F2C9CD832169B5B8B099B9A /* Frameworks */ = {
@@ -246,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11359BDE1E9F65250054D5FB /* LoginViewController.swift in Sources */,
+				11359BEF1EA032DD0054D5FB /* BookingCell.swift in Sources */,
 				11359BE21E9F6AE30054D5FB /* CreateBookingViewController.swift in Sources */,
 				11359BE01E9F6AB00054D5FB /* ManageViewController.swift in Sources */,
 				11359BCC1E9F5CC20054D5FB /* ViewController.swift in Sources */,

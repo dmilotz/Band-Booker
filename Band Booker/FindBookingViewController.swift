@@ -12,5 +12,9 @@ import UIKit
 class FindBookingViewController: UIViewController{
   
   
+  @IBOutlet var searchBar: UISearchBar!
+  @IBOutlet var tableView: UITableView!
+  
+  
   
 }
