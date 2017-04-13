@@ -120,22 +120,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQ4-ya-8ir">
-                                                    <rect key="frame" x="137" y="6" width="100" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Choose Venue"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQ4-ya-8ir">
+                                                    <rect key="frame" x="8" y="5" width="359" height="34"/>
+                                                    <state key="normal" title="Choose Venue">
+                                                        <color key="titleColor" red="0.079688997600000006" green="0.41125387229999999" blue="0.90179727980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="chooseVenueClicked:" destination="Tic-au-0bZ" eventType="touchUpInside" id="ReN-LS-XHg"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Venue Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwb-3C-F6i" userLabel="Venue Name">
-                                                    <rect key="frame" x="107" y="10" width="161" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nQ4-ya-8ir" firstAttribute="centerY" secondItem="5lP-L7-cpx" secondAttribute="centerY" id="0bd-h4-Mvo"/>
+                                                <constraint firstItem="nQ4-ya-8ir" firstAttribute="leading" secondItem="5lP-L7-cpx" secondAttribute="leading" constant="8" id="52Z-qR-lkr"/>
+                                                <constraint firstAttribute="trailing" secondItem="nQ4-ya-8ir" secondAttribute="trailing" constant="8" id="HBq-l7-Dnw"/>
+                                                <constraint firstItem="nQ4-ya-8ir" firstAttribute="centerX" secondItem="5lP-L7-cpx" secondAttribute="centerX" id="f6d-oS-eJu"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="183" id="m2n-6p-Pt0">
@@ -242,7 +242,6 @@
                         <outlet property="chooseVenueButton" destination="nQ4-ya-8ir" id="TVI-pC-ySi"/>
                         <outlet property="dateTimePicker" destination="QUB-Wt-Jhg" id="RMe-Vl-vdg"/>
                         <outlet property="genrePicker" destination="v1g-36-m63" id="Kt7-ej-Gqq"/>
-                        <outlet property="venueNameLabel" destination="Nwb-3C-F6i" id="MXL-W0-Mf8"/>
                     </connections>
                 </tableViewController>
             </objects>

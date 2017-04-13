@@ -20,22 +20,19 @@ class CreateBookingViewController:UITableViewController{
   @IBOutlet var bandOneLabel: UITextField!
   @IBOutlet var bandTwoLabel: UITextField!
   @IBOutlet var bandThreeLabel: UITextField!
-  @IBOutlet var venueNameLabel: UILabel!
   @IBOutlet var chooseVenueButton: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     genrePicker.dataSource = self
     genrePicker.delegate = self
-    venueNameLabel.isHidden = true
-    
+    chooseVenueButton.titleLabel?.text = "Choose Venue"
   }
   
   @IBAction func chooseVenueClicked(_ sender: Any) {
     let autocompleteController = GMSAutocompleteViewController()
     autocompleteController.delegate = self
     present(autocompleteController, animated: true, completion: nil)
-    chooseVenueButton.isHidden = true
   }
   
 }
@@ -55,6 +52,8 @@ extension CreateBookingViewController: GMSAutocompleteViewControllerDelegate {
       print(item.name)
     }
     print(place.types)
+
+    chooseVenueButton.setTitle(place.name, for: .normal)
     dismiss(animated: true, completion: nil)
   }
   
@@ -65,7 +64,6 @@ extension CreateBookingViewController: GMSAutocompleteViewControllerDelegate {
   
   // User canceled the operation.
   func wasCancelled(_ viewController: GMSAutocompleteViewController) {
-    chooseVenueButton.isHidden = false
     dismiss(animated: true, completion: nil)
   }
   
