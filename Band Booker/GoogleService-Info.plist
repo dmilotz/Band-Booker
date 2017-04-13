@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>613571894228-d8mmibv865mv4krrmt7ag99hgotu5hu1.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.613571894228-d8mmibv865mv4krrmt7ag99hgotu5hu1</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDeP5oeFBmuDBa02CYvYTHrLxaVD75LUMA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>613571894228</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.exercise.dagapps.Band-Booker</string>
+	<key>PROJECT_ID</key>
+	<string>band-booker</string>
+	<key>STORAGE_BUCKET</key>
+	<string>band-booker.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:613571894228:ios:86772267350807bf</string>
+	<key>DATABASE_URL</key>
+	<string>https://band-booker.firebaseio.com</string>
+</dict>
+</plist>
