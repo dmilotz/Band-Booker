@@ -17,4 +17,8 @@ class BookingCell:UITableViewCell{
   @IBOutlet var headlinerBand: UILabel!
   @IBOutlet var opener: UILabel!
   
+  @IBAction func contactBooker(_ sender: Any) {
+    
+    
+  }
 }

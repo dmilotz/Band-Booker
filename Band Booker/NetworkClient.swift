@@ -79,6 +79,7 @@ class NetworkClient{
     ref.child("venues").child(booking.venue.placeId).child("currentBookings").child(booking.bookingId).setValue("")
     ref.child("venues").child(booking.venue.placeId).setValue(booking.venue.getDict())
     ref.child("cities").child(booking.venue.city).child("currentBookings").child(booking.bookingId).setValue("")
+    
   }
   
   static func getBookingsPerCourse(courseId: String, completion: @escaping (_ dict: [String:Any]?, _ error: String?) -> Void) {

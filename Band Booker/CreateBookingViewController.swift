@@ -36,6 +36,8 @@ class CreateBookingViewController:UITableViewController{
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    chosenSpot = spotPickerDataSource[0]
+    chosenGenre = genrePickerDataSource[0]
     spotNeededPicker.dataSource = self
     spotNeededPicker.delegate = self
     genrePicker.dataSource = self

@@ -18,8 +18,9 @@ struct Booking{
   var band3: String?
   var genre: String
   var spotNeeded: String
+  
   func getDict()->[String:Any]{
-    return ["venue": venue.placeId, "date": date, "time": time, "band1": band1 ?? "none", "band2": band2 ?? "none", "band3":band3 ?? "none","genre": genre, "spotNeeded": spotNeeded]
+    return ["bookingId":bookingId, "venueId": venue.placeId, "date": date, "time": time, "band1": band1 ?? "none", "band2": band2 ?? "none", "band3":band3 ?? "none","genre": genre, "spotNeeded": spotNeeded, "city": venue.city.lowercased(), "venueName" : venue.name, "fullAddress": venue.fullAddress, "state": venue.state, "zipCode": venue.zipCode]
   }
   
 }
