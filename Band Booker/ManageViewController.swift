@@ -9,86 +9,112 @@
 import Foundation
 import UIKit
 import GooglePlaces
+import FirebaseAuth
+import FirebaseDatabase
 
-class ManageViewController:UITableViewController{
-  var genrePickerDataSource = ["Rock", "Folk", "Pop","Shoegaze"]
-  var chosenGenre: String = ""
+class ManageViewController: UITableViewController{
+  var ref: FIRDatabaseReference!
+  var bookings: [Booking] = []
   
-
-  @IBOutlet var dateTimePicker: UIDatePicker!
-  @IBOutlet var genrePicker: UIPickerView!
-  @IBOutlet var bandOneLabel: UITextField!
-  @IBOutlet var bandTwoLabel: UITextField!
-  @IBOutlet var bandThreeLabel: UITextField!
   
-  override func viewDidLoad() {
+  override func viewDidLoad(){
     super.viewDidLoad()
-    genrePicker.dataSource = self
-    genrePicker.delegate = self
-  
+    ref = FIRDatabase.database().reference()
+    findBookings()
+    self.tableView.allowsMultipleSelectionDuringEditing = false;
+    
   }
   
-  @IBAction func chooseVenueClicked(_ sender: Any) {
-    let autocompleteController = GMSAutocompleteViewController()
-    autocompleteController.delegate = self
-    present(autocompleteController, animated: true, completion: nil)
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    bookings = []
+    findBookings()
   }
-
-}
-
-
-// MARK: - GMSAutocompleteViewControllerDelegate
-extension ManageViewController: GMSAutocompleteViewControllerDelegate {
   
-  // Handle the user's selection.
-  func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-//    print("Place name: \(place.name)")
-//    print("Place address: \(place.formattedAddress)")
-//    print("Place attributions: \(place.attributions)")
-//    print(place.coordinate)
-    for item in place.addressComponents!{
-      print(item.type)
-      print(item.name)
+  @IBAction func logout(_ sender: Any) {
+    let firebaseAuth = FIRAuth.auth()
+    do {
+      try firebaseAuth?.signOut()
+    } catch let signOutError as NSError {
+      print ("Error signing out: %@", signOutError)
     }
-    print(place.types)
-    dismiss(animated: true, completion: nil)
+    let loginViewController = self.storyboard!.instantiateViewController(withIdentifier: "LoginViewController")
+    UIApplication.shared.keyWindow?.rootViewController = loginViewController
   }
   
-  func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-    // TODO: handle the error.
-    print("Error: ", error.localizedDescription)
+  func findBookings(){
+    let userId = FIRAuth.auth()?.currentUser?.uid
+    NetworkClient.getUserInfo(userId: userId!) { (dict, error) in
+      if let bookingDict = dict?["currentBookings"] as? [String:String]{
+        print (bookingDict)
+        for bookingId in bookingDict.keys{
+          print(bookingId)
+          self.ref.child("bookings").child(bookingId).observeSingleEvent(of: .value, with: { (snapshot) in
+            if let dict = snapshot.value as? [String:Any]{
+              let venue = Venue(name: dict["venueName"] as! String, city: dict["city"] as! String, state: dict["state"] as! String, fullAddress: dict["fullAddress"] as! String, zipCode: dict["zipCode"] as! String, placeId: dict["venueId"] as! String)
+              let booking = Booking(bookingId: dict["bookingId"] as! String, venue: venue, date: dict["date"] as! String, time: dict["time"] as! String, band1: dict["band1"] as! String, band2: dict["band2"] as! String, band3: dict["band3"] as! String, genre: dict["genre"] as! String, spotNeeded: dict["spotNeeded"] as! String, bookerEmail: dict["email"] as! String)
+              if !self.bookings.contains(booking){
+                
+                self.bookings.append(booking)
+                DispatchQueue.main.async{
+                  self.tableView.reloadData()
+                }
+              }
+            }
+          })
+        }
+      }
+      
+    }
+  }
+}
+
+//MARK : Table delegate
+
+extension ManageViewController{
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
   }
   
-  // User canceled the operation.
-  func wasCancelled(_ viewController: GMSAutocompleteViewController) {
-    dismiss(animated: true, completion: nil)
+  override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    return true
   }
   
-  // Turn the network activity indicator on and off again.
-  func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-    UIApplication.shared.isNetworkActivityIndicatorVisible = true
+  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    if(editingStyle == UITableViewCellEditingStyle.delete){
+      let booking = self.bookings[(indexPath as NSIndexPath).row]
+      let uid = FIRAuth.auth()?.currentUser?.uid
+      let ref = FIRDatabase.database().reference()
+      ref.child("users").child(uid!).child("currentBookings").child(booking.bookingId).removeValue()
+      ref.child("bookings").child(booking.bookingId).removeValue()
+      ref.child("cities").child("currentBookings").child(booking.bookingId).removeValue()
+      bookings.remove(at: (indexPath as NSIndexPath).row)
+      tableView.reloadData()
+    }
+  }
+}
+
+extension ManageViewController{
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return bookings.count
+    
   }
   
-  func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    //let courses = try! Realm().objects(Course.self).filter("e_city CONTAINS %@ OR e_state CONTAINS %@ OR biz_name CONTAINS %@",search,search,search)
+    let cell = tableView.dequeueReusableCell(withIdentifier: "bookingCell") as! BookingCell
+    let booking = self.bookings[(indexPath as NSIndexPath).row]
+    cell.date.text = booking.date
+    cell.genre.text = "Genre: \(booking.genre)"
+    cell.headlinerBand.text = booking.band1
+    cell.supportBand.text = booking.band2
+    cell.opener.text = booking.band3
+    cell.venueName.text = booking.venue.name
+    cell.spotNeeded.text = "Spot Needed: \(booking.spotNeeded)"
+    return cell
   }
+  
+  
   
 }
 
-// MARK: - Picker delegate used for handicap picker
-
-extension ManageViewController: UIPickerViewDelegate, UIPickerViewDataSource{
-  func numberOfComponents(in pickerView: UIPickerView) -> Int {
-    return 1
-  }
-  func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-    return genrePickerDataSource.count
-  }
-  func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    return genrePickerDataSource[row]
-  }
-  func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    chosenGenre = genrePickerDataSource[row]
-  }
-  
-}

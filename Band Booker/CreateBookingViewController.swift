@@ -36,6 +36,8 @@ class CreateBookingViewController:UITableViewController{
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    hideKeyboardWhenTappedAround()
+
     chosenSpot = spotPickerDataSource[0]
     chosenGenre = genrePickerDataSource[0]
     spotNeededPicker.dataSource = self
@@ -44,7 +46,13 @@ class CreateBookingViewController:UITableViewController{
     genrePicker.delegate = self
     chooseVenueButton.titleLabel?.text = "Choose Venue"
     createBookingButton.isEnabled = false
+    defaultState()
+
+  }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    defaultState()
   }
   
   @IBAction func chooseVenueClicked(_ sender: Any) {
@@ -54,17 +62,33 @@ class CreateBookingViewController:UITableViewController{
   }
   
   @IBAction func createBooking(_ sender: Any) {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "dd-MM-YY, HH:mm"
-    chosenDate = dateFormatter.string(from: dateTimePicker.date) // You can pass your date here as a parameter to get in a desired format
-    dateFormatter.dateFormat = "HH:mm"
-    chosenTime = dateFormatter.string(from: dateTimePicker.date)
-    if(chosenGenre != nil || chosenDate != nil || chooseVenueButton.title(for: .normal) != "Choose Venue"){
-    let curUser = FIRAuth.auth()?.currentUser?.uid
-    let venue = Venue(name: placeInfoDict["name"]!, city: placeInfoDict["city"]!, state: placeInfoDict["state"]!, fullAddress: placeInfoDict["fullAddress"]!, zipCode: placeInfoDict["postal_code"]!, placeId: placeInfoDict["placeId"]!)
-      let booking = Booking(bookingId: UUID().uuidString, venue: venue, date: chosenDate!, time: chosenTime!, band1: bandOneLabel.text, band2: bandTwoLabel.text, band3: bandThreeLabel.text, genre: chosenGenre, spotNeeded: chosenSpot!)
-    NetworkClient.createBooking(booking)
+    let userId = FIRAuth.auth()?.currentUser?.uid
+    let curUser = NetworkClient.getUserInfo(userId: userId!) { (dict, error) in
+      
+      let dateFormatter = DateFormatter()
+      dateFormatter.dateFormat = "E, MMM dd, yy' at 'h:mm a."
+      self.chosenDate = dateFormatter.string(from: self.dateTimePicker.date) // You can pass your date here as a parameter to get in a desired format
+      dateFormatter.dateFormat = "HH:mm"
+      self.chosenTime = dateFormatter.string(from: self.dateTimePicker.date)
+      if(self.chosenGenre != nil || self.chosenDate != nil || self.chooseVenueButton.title(for: .normal) != "Choose Venue"){
+        _ = FIRAuth.auth()?.currentUser?.uid
+        let venue = Venue(name: self.placeInfoDict["name"]!, city: self.placeInfoDict["city"]!, state: self.placeInfoDict["state"]!, fullAddress: self.placeInfoDict["fullAddress"]!, zipCode: self.placeInfoDict["postal_code"]!, placeId: self.placeInfoDict["placeId"]!)
+        let booking = Booking(bookingId: UUID().uuidString, venue: venue, date: self.chosenDate!, time: self.chosenTime!, band1: self.bandOneLabel.text, band2: self.bandTwoLabel.text, band3: self.bandThreeLabel.text, genre: self.chosenGenre, spotNeeded: self.chosenSpot!, bookerEmail: dict?["email"] as! String)
+        NetworkClient.createBooking(booking)
+        self.tabBarController?.selectedIndex = 2
+      }
     }
+  
+  }
+  
+  
+  func defaultState(){
+    chooseVenueButton.setTitle("Choose Venue", for: .normal)
+    chosenSpot = spotPickerDataSource[0]
+    chosenGenre = genrePickerDataSource[0]
+    bandOneLabel.text = "Headliner"
+    bandTwoLabel.text = "Support"
+    bandThreeLabel.text = "Opener"
   }
   
 }

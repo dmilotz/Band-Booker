@@ -12,6 +12,7 @@ target 'Band Booker' do
 	  pod 'GooglePlaces'
   pod 'GooglePlacePicker'
   pod 'GoogleMaps'
+pod 'JSQMessagesViewController'
   # Pods for Band Booker
 
 end

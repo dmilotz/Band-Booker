@@ -84,7 +84,7 @@ class NetworkClient{
   
   static func getBookingsPerCourse(courseId: String, completion: @escaping (_ dict: [String:Any]?, _ error: String?) -> Void) {
     let ref = FIRDatabase.database().reference()
-    ref.child("courses").child(courseId).child("currentBookings").observeSingleEvent(of: .value, with: { (snapshot) in
+    ref.child("bookings").child(courseId).child("currentBookings").observeSingleEvent(of: .value, with: { (snapshot) in
       if let dict = snapshot.value as? [String:Any]{
         completion(dict, nil)
       }else{
