@@ -27,6 +27,24 @@
 		11359C041EA08C860054D5FB /* courseCellMaskTop@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11359C011EA08C860054D5FB /* courseCellMaskTop@1x.png */; };
 		11359C051EA08C860054D5FB /* courseCellMaskTop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11359C021EA08C860054D5FB /* courseCellMaskTop@2x.png */; };
 		11359C061EA08C860054D5FB /* courseCellMaskTop@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11359C031EA08C860054D5FB /* courseCellMaskTop@3x.png */; };
+		11359C101EA09A6C0054D5FB /* SpeakerIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 11359C071EA09A6C0054D5FB /* SpeakerIcon.png */; };
+		11359C111EA09A6C0054D5FB /* SpeakerIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11359C081EA09A6C0054D5FB /* SpeakerIcon@2x.png */; };
+		11359C121EA09A6C0054D5FB /* SpeakerIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11359C091EA09A6C0054D5FB /* SpeakerIcon@3x.png */; };
+		11359C131EA09A6C0054D5FB /* MusicNotesIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 11359C0A1EA09A6C0054D5FB /* MusicNotesIcon.png */; };
+		11359C141EA09A6C0054D5FB /* MusicNotesIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11359C0B1EA09A6C0054D5FB /* MusicNotesIcon@2x.png */; };
+		11359C151EA09A6C0054D5FB /* MusicNotesIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11359C0C1EA09A6C0054D5FB /* MusicNotesIcon@3x.png */; };
+		11359C161EA09A6C0054D5FB /* GuitarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 11359C0D1EA09A6C0054D5FB /* GuitarIcon.png */; };
+		11359C171EA09A6C0054D5FB /* GuitarIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11359C0E1EA09A6C0054D5FB /* GuitarIcon@2x.png */; };
+		11359C181EA09A6C0054D5FB /* GuitarIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11359C0F1EA09A6C0054D5FB /* GuitarIcon@3x.png */; };
+		11359C311EA09D410054D5FB /* devil@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11359C2B1EA09D410054D5FB /* devil@1x.png */; };
+		11359C321EA09D410054D5FB /* devil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11359C2C1EA09D410054D5FB /* devil@2x.png */; };
+		11359C331EA09D410054D5FB /* devil@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11359C2D1EA09D410054D5FB /* devil@3x.png */; };
+		11359C341EA09D410054D5FB /* Synthesizer@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11359C2E1EA09D410054D5FB /* Synthesizer@1x.png */; };
+		11359C351EA09D410054D5FB /* Synthesizer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11359C2F1EA09D410054D5FB /* Synthesizer@2x.png */; };
+		11359C361EA09D410054D5FB /* Synthesizer@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11359C301EA09D410054D5FB /* Synthesizer@3x.png */; };
+		11359C3A1EA09DDC0054D5FB /* tape@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11359C371EA09DDC0054D5FB /* tape@1x.png */; };
+		11359C3B1EA09DDC0054D5FB /* tape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11359C381EA09DDC0054D5FB /* tape@2x.png */; };
+		11359C3C1EA09DDC0054D5FB /* tape@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11359C391EA09DDC0054D5FB /* tape@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +70,24 @@
 		11359C011EA08C860054D5FB /* courseCellMaskTop@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "courseCellMaskTop@1x.png"; sourceTree = "<group>"; };
 		11359C021EA08C860054D5FB /* courseCellMaskTop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "courseCellMaskTop@2x.png"; sourceTree = "<group>"; };
 		11359C031EA08C860054D5FB /* courseCellMaskTop@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "courseCellMaskTop@3x.png"; sourceTree = "<group>"; };
+		11359C071EA09A6C0054D5FB /* SpeakerIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SpeakerIcon.png; sourceTree = "<group>"; };
+		11359C081EA09A6C0054D5FB /* SpeakerIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SpeakerIcon@2x.png"; sourceTree = "<group>"; };
+		11359C091EA09A6C0054D5FB /* SpeakerIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SpeakerIcon@3x.png"; sourceTree = "<group>"; };
+		11359C0A1EA09A6C0054D5FB /* MusicNotesIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MusicNotesIcon.png; sourceTree = "<group>"; };
+		11359C0B1EA09A6C0054D5FB /* MusicNotesIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicNotesIcon@2x.png"; sourceTree = "<group>"; };
+		11359C0C1EA09A6C0054D5FB /* MusicNotesIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicNotesIcon@3x.png"; sourceTree = "<group>"; };
+		11359C0D1EA09A6C0054D5FB /* GuitarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GuitarIcon.png; sourceTree = "<group>"; };
+		11359C0E1EA09A6C0054D5FB /* GuitarIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GuitarIcon@2x.png"; sourceTree = "<group>"; };
+		11359C0F1EA09A6C0054D5FB /* GuitarIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GuitarIcon@3x.png"; sourceTree = "<group>"; };
+		11359C2B1EA09D410054D5FB /* devil@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "devil@1x.png"; sourceTree = "<group>"; };
+		11359C2C1EA09D410054D5FB /* devil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "devil@2x.png"; sourceTree = "<group>"; };
+		11359C2D1EA09D410054D5FB /* devil@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "devil@3x.png"; sourceTree = "<group>"; };
+		11359C2E1EA09D410054D5FB /* Synthesizer@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Synthesizer@1x.png"; sourceTree = "<group>"; };
+		11359C2F1EA09D410054D5FB /* Synthesizer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Synthesizer@2x.png"; sourceTree = "<group>"; };
+		11359C301EA09D410054D5FB /* Synthesizer@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Synthesizer@3x.png"; sourceTree = "<group>"; };
+		11359C371EA09DDC0054D5FB /* tape@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tape@1x.png"; sourceTree = "<group>"; };
+		11359C381EA09DDC0054D5FB /* tape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tape@2x.png"; sourceTree = "<group>"; };
+		11359C391EA09DDC0054D5FB /* tape@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tape@3x.png"; sourceTree = "<group>"; };
 		3659617181B64A1ABF9EE744 /* Pods-Band Booker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Band Booker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Band Booker/Pods-Band Booker.debug.xcconfig"; sourceTree = "<group>"; };
 		9FA1CAB3D7EB736FB4166E52 /* Pods-Band Booker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Band Booker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Band Booker/Pods-Band Booker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,12 +125,10 @@
 		11359BC81E9F5CC20054D5FB /* Band Booker */ = {
 			isa = PBXGroup;
 			children = (
+				11359C3F1EA0B3D70054D5FB /* Assets */,
 				11359BED1EA032CD0054D5FB /* Cells */,
 				11359BE51EA0043D0054D5FB /* Models */,
 				11359BC91E9F5CC20054D5FB /* AppDelegate.swift */,
-				11359C011EA08C860054D5FB /* courseCellMaskTop@1x.png */,
-				11359C021EA08C860054D5FB /* courseCellMaskTop@2x.png */,
-				11359C031EA08C860054D5FB /* courseCellMaskTop@3x.png */,
 				11359BCB1E9F5CC20054D5FB /* ViewController.swift */,
 				11359BCD1E9F5CC20054D5FB /* Main.storyboard */,
 				11359BD01E9F5CC20054D5FB /* Assets.xcassets */,
@@ -127,6 +161,34 @@
 				11359BEE1EA032DD0054D5FB /* BookingCell.swift */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		11359C3F1EA0B3D70054D5FB /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				11359C371EA09DDC0054D5FB /* tape@1x.png */,
+				11359C381EA09DDC0054D5FB /* tape@2x.png */,
+				11359C391EA09DDC0054D5FB /* tape@3x.png */,
+				11359C2B1EA09D410054D5FB /* devil@1x.png */,
+				11359C2C1EA09D410054D5FB /* devil@2x.png */,
+				11359C2D1EA09D410054D5FB /* devil@3x.png */,
+				11359C2E1EA09D410054D5FB /* Synthesizer@1x.png */,
+				11359C2F1EA09D410054D5FB /* Synthesizer@2x.png */,
+				11359C301EA09D410054D5FB /* Synthesizer@3x.png */,
+				11359C071EA09A6C0054D5FB /* SpeakerIcon.png */,
+				11359C081EA09A6C0054D5FB /* SpeakerIcon@2x.png */,
+				11359C091EA09A6C0054D5FB /* SpeakerIcon@3x.png */,
+				11359C0A1EA09A6C0054D5FB /* MusicNotesIcon.png */,
+				11359C0B1EA09A6C0054D5FB /* MusicNotesIcon@2x.png */,
+				11359C0C1EA09A6C0054D5FB /* MusicNotesIcon@3x.png */,
+				11359C0D1EA09A6C0054D5FB /* GuitarIcon.png */,
+				11359C0E1EA09A6C0054D5FB /* GuitarIcon@2x.png */,
+				11359C0F1EA09A6C0054D5FB /* GuitarIcon@3x.png */,
+				11359C011EA08C860054D5FB /* courseCellMaskTop@1x.png */,
+				11359C021EA08C860054D5FB /* courseCellMaskTop@2x.png */,
+				11359C031EA08C860054D5FB /* courseCellMaskTop@3x.png */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		5F2C9CD832169B5B8B099B9A /* Frameworks */ = {
@@ -209,14 +271,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11359C181EA09A6C0054D5FB /* GuitarIcon@3x.png in Resources */,
+				11359C3C1EA09DDC0054D5FB /* tape@3x.png in Resources */,
 				11359BF91EA081C90054D5FB /* musicPhoto.jpeg in Resources */,
+				11359C3B1EA09DDC0054D5FB /* tape@2x.png in Resources */,
+				11359C331EA09D410054D5FB /* devil@3x.png in Resources */,
 				11359BD41E9F5CC20054D5FB /* LaunchScreen.storyboard in Resources */,
+				11359C121EA09A6C0054D5FB /* SpeakerIcon@3x.png in Resources */,
+				11359C171EA09A6C0054D5FB /* GuitarIcon@2x.png in Resources */,
+				11359C341EA09D410054D5FB /* Synthesizer@1x.png in Resources */,
+				11359C161EA09A6C0054D5FB /* GuitarIcon.png in Resources */,
 				11359BD11E9F5CC20054D5FB /* Assets.xcassets in Resources */,
+				11359C3A1EA09DDC0054D5FB /* tape@1x.png in Resources */,
+				11359C131EA09A6C0054D5FB /* MusicNotesIcon.png in Resources */,
 				11359BCF1E9F5CC20054D5FB /* Main.storyboard in Resources */,
+				11359C361EA09D410054D5FB /* Synthesizer@3x.png in Resources */,
 				11359C041EA08C860054D5FB /* courseCellMaskTop@1x.png in Resources */,
+				11359C111EA09A6C0054D5FB /* SpeakerIcon@2x.png in Resources */,
+				11359C101EA09A6C0054D5FB /* SpeakerIcon.png in Resources */,
+				11359C311EA09D410054D5FB /* devil@1x.png in Resources */,
 				11359BDC1E9F5EE70054D5FB /* GoogleService-Info.plist in Resources */,
+				11359C151EA09A6C0054D5FB /* MusicNotesIcon@3x.png in Resources */,
+				11359C141EA09A6C0054D5FB /* MusicNotesIcon@2x.png in Resources */,
 				11359C061EA08C860054D5FB /* courseCellMaskTop@3x.png in Resources */,
 				11359C051EA08C860054D5FB /* courseCellMaskTop@2x.png in Resources */,
+				11359C321EA09D410054D5FB /* devil@2x.png in Resources */,
+				11359C351EA09D410054D5FB /* Synthesizer@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +491,7 @@
 			baseConfigurationReference = 3659617181B64A1ABF9EE744 /* Pods-Band Booker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 766WEDGHA7;
 				INFOPLIST_FILE = "Band Booker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -425,6 +506,7 @@
 			baseConfigurationReference = 9FA1CAB3D7EB736FB4166E52 /* Pods-Band Booker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 766WEDGHA7;
 				INFOPLIST_FILE = "Band Booker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

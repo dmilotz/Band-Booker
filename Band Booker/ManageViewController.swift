@@ -102,7 +102,7 @@ extension ManageViewController{
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     //let courses = try! Realm().objects(Course.self).filter("e_city CONTAINS %@ OR e_state CONTAINS %@ OR biz_name CONTAINS %@",search,search,search)
-    let cell = tableView.dequeueReusableCell(withIdentifier: "bookingCell") as! BookingCell
+    let cell = tableView.dequeueReusableCell(withIdentifier: "bookingCell2") as! BookingCell
     let booking = self.bookings[(indexPath as NSIndexPath).row]
     cell.date.text = booking.date
     cell.genre.text = "Genre: \(booking.genre)"

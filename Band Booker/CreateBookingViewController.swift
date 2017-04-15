@@ -83,7 +83,6 @@ class CreateBookingViewController:UITableViewController{
   
   
   func defaultState(){
-    chooseVenueButton.setTitle("Choose Venue", for: .normal)
     chosenSpot = spotPickerDataSource[0]
     chosenGenre = genrePickerDataSource[0]
     bandOneLabel.text = "Headliner"

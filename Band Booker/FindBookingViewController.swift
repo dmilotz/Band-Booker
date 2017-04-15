@@ -18,6 +18,8 @@ class FindBookingViewController: UIViewController, MFMailComposeViewControllerDe
   var ref: FIRDatabaseReference!
   let locationManager = CLLocationManager()
   var bookings: [Booking] = []
+  var searchBarClickedFlag: Bool = false
+  
   @IBOutlet var searchBar: UISearchBar!
   @IBOutlet var tableView: UITableView!
   
@@ -51,7 +53,12 @@ class FindBookingViewController: UIViewController, MFMailComposeViewControllerDe
     bookings.removeAll()
     tableView.reloadData()
     ref.child("bookings").queryOrdered(byChild: "city").queryStarting(atValue: text).queryEnding(atValue: text + "\u{f8ff}").observe(.value, with: { snapshot in
-      
+      if (self.searchBarClickedFlag == true && !snapshot.exists()){
+        DispatchQueue.main.async{
+          self.searchBarClickedFlag = false
+          self.displayAlert("No shows found for this city", title: "")
+        }
+      }
       if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
         
         for snap in snapshots
@@ -96,15 +103,23 @@ extension FindBookingViewController: UISearchBarDelegate{
     //searchActive = false
     searchBar.endEditing(true)
     searchBar.resignFirstResponder()
+    searchBarClickedFlag = true
     findBookings(text: searchBar.text!.lowercased())
   }
   
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     if(!(searchBar.text?.isEmpty)!){
     findBookings(text: searchBar.text!.lowercased())
+    }else{
+      bookings = []
+      tableView.reloadData()
     }
   }
   
+  func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    searchBar.endEditing(true)
+    searchBar.resignFirstResponder()
+  }
   func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
     searchBar.endEditing(true)
     searchBar.resignFirstResponder()
